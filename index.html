@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concours de Création de Pages Web - Stagiaires Seconde</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="imarch.jpg">
+    <link rel="shortcut icon" type="image/jpeg" href="imarch.jpg">
+    <link rel="apple-touch-icon" href="imarch.jpg">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #4a5568;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .subtitle {
+            color: #667eea;
+            font-size: 1.3em;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .hero-description {
+            font-size: 1.1em;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .section h2 {
+            color: #4a5568;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h3 {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding: 20px 0;
+            border-left: 3px solid #667eea;
+            padding-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 25px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #667eea;
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.1em;
+        }
+
+        .criteria-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .criteria-list li {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            margin: 10px 0;
+            padding: 15px 20px;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+            transition: transform 0.2s ease;
+        }
+
+        .criteria-list li:hover {
+            transform: translateX(5px);
+        }
+
+        .prize-card {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            border: none;
+            color: #4a5568;
+        }
+
+        .prize-card h3 {
+            color: #d69e2e;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 10px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .emoji {
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #a8e6cf 0%, #dcedc1 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #4caf50;
+        }
+
+        .warning {
+            background: linear-gradient(120deg, #ffd3a5 0%, #fd9853 100%);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 5px solid #ff9800;
+            color: #4a5568;
+        }
+
+        .ranking-section {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(10px);
+            border: 2px solid #dc2626;
+        }
+
+        .ranking-card {
+            background: linear-gradient(135deg, #fef3c7 0%, #fbbf24 100%);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            border-left: 6px solid #dc2626;
+        }
+
+        .ranking-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .ranking-card h3 {
+            color: #dc2626;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .ranking-position {
+            background: #dc2626;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .ranking-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .detail-item {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 10px 15px;
+            border-radius: 8px;
+            border-left: 3px solid #dc2626;
+        }
+
+        .detail-label {
+            font-weight: bold;
+            color: #4a5568;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .detail-value {
+            color: #1f2937;
+            margin-top: 5px;
+        }
+
+        .theme-title {
+            font-style: italic;
+            color: #6b7280;
+        }
+
+        #confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="imarch.jpg" alt="Logo Groupement Les Mousquetaires" class="logo">
+            <h1>🚀 Concours de Création de Pages Web</h1>
+            <p class="subtitle">Organisé par la STIME - DSI du Groupement Les Mousquetaires</p>
+            <p class="subtitle">Destiné aux Stagiaires de Seconde</p>
+            <p class="hero-description">
+                Participez à ce défi créatif et montrez vos talents en développement web ! 
+                Une opportunité unique de mettre en pratique vos compétences HTML, CSS et JavaScript 
+                tout en développant votre créativité numérique au sein de la Direction des Systèmes d'Information.
+            </p>
+        </header>
+
+        <div class="ranking-section">
+            <h2><span class="emoji">🏆</span>Classement Final du Concours</h2>
+            
+            <div class="ranking-card">
+                <h3><span class="ranking-position">1</span>Ilyas</h3>
+                <p class="theme-title">"Classement cosmétiques jeux vidéo (Valorant)"</p>
+                <div class="ranking-details">
+                    <div class="detail-item">
+                        <div class="detail-label">Oral</div>
+                        <div class="detail-value">5/5 ⭐</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Technique</div>
+                        <div class="detail-value">4/5 ⚙️</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Notes Stagiaires</div>
+                        <div class="detail-value">9/10 • 8,5/10 👥</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ranking-card">
+                <h3><span class="ranking-position">2</span>Dany</h3>
+                <p class="theme-title">"Site de vente de PC"</p>
+                <div class="ranking-details">
+                    <div class="detail-item">
+                        <div class="detail-label">Oral</div>
+                        <div class="detail-value">4/5 ⭐</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Technique</div>
+                        <div class="detail-value">5/5 ⚙️</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Notes Stagiaires</div>
+                        <div class="detail-value">8,5/10 • 8,5/10 👥</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ranking-card">
+                <h3><span class="ranking-position">3</span>Euloge</h3>
+                <p class="theme-title">"Notre collection de chaussures"</p>
+                <div class="ranking-details">
+                    <div class="detail-item">
+                        <div class="detail-label">Oral</div>
+                        <div class="detail-value">4/5 ⭐</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Technique</div>
+                        <div class="detail-value">3/5 ⚙️</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Notes Stagiaires</div>
+                        <div class="detail-value">6/10 • 7/10 👥</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ranking-card">
+                <h3><span class="ranking-position">4</span>Naël</h3>
+                <p class="theme-title">"Intermisère"</p>
+                <div class="ranking-details">
+                    <div class="detail-item">
+                        <div class="detail-label">Oral</div>
+                        <div class="detail-value">3/5 ⭐</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Technique</div>
+                        <div class="detail-value">2/5 ⚙️</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Notes Stagiaires</div>
+                        <div class="detail-value">6/10 • 6,5/10 👥</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight">
+                🎉 <strong>Félicitations à tous les participants !</strong> Chaque projet présentait des qualités uniques et témoignait de l'engagement et de la créativité de nos stagiaires.
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="emoji">🎯</span>Objectif du Concours</h2>
+            <p>Ce concours, organisé par la STIME (Direction des Systèmes d'Information du Groupement Les Mousquetaires), vise à encourager les stagiaires de seconde à développer leurs compétences en création de sites web tout en stimulant leur créativité et leur esprit d'innovation. Chaque participant devra concevoir et réaliser une page web originale sur un thème imposé, dans le cadre de leur stage au sein de notre DSI.</p>
+            
+            <div class="highlight">
+                <strong>Thème 2025 :</strong> Thème libre (site e-commerce, gaming, réseau social, etc.) - Laissez libre cours à votre créativité et développez le site web de vos rêves !
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="emoji">📋</span>Conditions de Participation</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>👥 Qui peut participer ?</h3>
+                    <p>Tous les stagiaires de seconde actuellement en stage à la STIME, individuellement ou en binôme (maximum 2 personnes par équipe).</p>
+                </div>
+                <div class="card">
+                    <h3>💻 Technologies autorisées</h3>
+                    <p>HTML5, CSS3, JavaScript (vanilla), Bootstrap, et toute bibliothèque CSS libre de droits.</p>
+                </div>
+                <div class="card">
+                    <h3>📱 Contraintes techniques</h3>
+                    <p>Page responsive, accessible, et fonctionnelle sur tous les navigateurs modernes.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="emoji">📅</span>Calendrier du Concours</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">23 Juin 2025</div>
+                    <h4>Présentation du sujet</h4>
+                    <p>Présentation du sujet par Hakim S. et lancement officiel du concours</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">26 Juin 2025</div>
+                    <h4>Concours et annonce des résultats</h4>
+                    <p>Réalisation des projets, présentation finale et annonce du classement</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="emoji">⭐</span>Critères d'Évaluation</h2>
+            <ul class="criteria-list">
+                <li><strong>Créativité et Originalité (25%)</strong> - Innovation dans le design et les idées présentées</li>
+                <li><strong>Qualité Technique (25%)</strong> - Code propre, validé W3C, bonnes pratiques</li>
+                <li><strong>Design et Ergonomie (20%)</strong> - Interface attrayante et intuitive</li>
+                <li><strong>Respect du Thème (15%)</strong> - Adéquation avec le sujet imposé</li>
+                <li><strong>Responsivité (10%)</strong> - Adaptation aux différents écrans</li>
+                <li><strong>Accessibilité (5%)</strong> - Respect des standards d'accessibilité web</li>
+            </ul>
+            
+            <div class="warning">
+                <strong>⚠️ Important :</strong> Tout plagiat entraînera l'exclusion immédiate du concours. L'originalité est primordiale !
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="emoji">🏆</span>Récompenses</h2>
+            <div class="grid">
+                <div class="card prize-card">
+                    <h3>🥇 1ère Place</h3>
+                    <p><strong>Marshmallow</strong><br>
+                    + Certificat de réussite STIME<br>
+                    + Stage d'une semaine dans une agence web partenaire</p>
+                </div>
+                <div class="card prize-card">
+                    <h3>🥈 2ème Place</h3>
+                    <p><strong>Sachet de Twix</strong><br>
+                    + Certificat de réussite STIME<br>
+                    + Formation en ligne premium</p>
+                </div>
+                <div class="card prize-card">
+                    <h3>🥉 3ème Place</h3>
+                    <p><strong>Bonbons Haribo</strong><br>
+                    + Certificat de réussite STIME<br>
+                    + Pack de ressources design</p>
+                </div>
+            </div>
+            
+            <div class="highlight">
+                🎁 <strong>Prix spéciaux :</strong> Des Mugs STIME pour le jury incarné par 2 stagiaires • Prix du public • Prix de l'innovation • Prix de l'accessibilité
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="emoji">💡</span>Conseils pour Réussir</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>🎨 Design</h3>
+                    <p>Privilégiez la simplicité et l'élégance. Un design épuré avec de belles couleurs vaut mieux qu'une surcharge visuelle.</p>
+                </div>
+                <div class="card">
+                    <h3>📝 Contenu</h3>
+                    <p>Rédigez du contenu original et pertinent. Évitez le "Lorem Ipsum" et créez du vrai contenu en lien avec le thème.</p>
+                </div>
+                <div class="card">
+                    <h3>⚡ Performance</h3>
+                    <p>Optimisez vos images et votre code. Une page rapide est une page qui plaît aux utilisateurs et aux jurés !</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Canvas pour les confettis -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <script>
+        // Animation de confettis
+        const canvas = document.getElementById('confetti-canvas');
+        const ctx = canvas.getContext('2d');
+
+        // Ajuster la taille du canvas
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        // Classe pour un confetti
+        class Confetti {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = -10;
+                this.vx = (Math.random() - 0.5) * 4;
+                this.vy = Math.random() * 3 + 2;
+                this.rotation = Math.random() * 360;
+                this.rotationSpeed = (Math.random() - 0.5) * 10;
+                this.size = Math.random() * 8 + 4;
+                this.colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#f9ca24', '#f0932b', '#eb4d4b', '#6c5ce7', '#a29bfe', '#fd79a8', '#fdcb6e'];
+                this.color = this.colors[Math.floor(Math.random() * this.colors.length)];
+                this.shape = Math.random() > 0.5 ? 'rect' : 'circle';
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                this.rotation += this.rotationSpeed;
+                this.vy += 0.1; // Gravité
+
+                // Redémarrer si le confetti sort de l'écran
+                if (this.y > canvas.height + 10) {
+                    this.y = -10;
+                    this.x = Math.random() * canvas.width;
+                    this.vy = Math.random() * 3 + 2;
+                }
+
+                if (this.x > canvas.width + 10) {
+                    this.x = -10;
+                } else if (this.x < -10) {
+                    this.x = canvas.width + 10;
+                }
+            }
+
+            draw() {
+                ctx.save();
+                ctx.translate(this.x, this.y);
+                ctx.rotate(this.rotation * Math.PI / 180);
+                ctx.fillStyle = this.color;
+
+                if (this.shape === 'rect') {
+                    ctx.fillRect(-this.size/2, -this.size/2, this.size, this.size);
+                } else {
+                    ctx.beginPath();
+                    ctx.arc(0, 0, this.size/2, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+
+                ctx.restore();
+            }
+        }
+
+        // Créer les confettis
+        const confettis = [];
+        for (let i = 0; i < 50; i++) {
+            confettis.push(new Confetti());
+        }
+
+        // Animation principale
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            confettis.forEach(confetti => {
+                confetti.update();
+                confetti.draw();
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        // Démarrer l'animation après un délai de 2 secondes
+        setTimeout(() => {
+            animate();
+        }, 2000);
+
+        // Ajouter plus de confettis quand on clique
+        document.addEventListener('click', () => {
+            for (let i = 0; i < 10; i++) {
+                confettis.push(new Confetti());
+            }
+            // Limiter le nombre de confettis à 100
+            if (confettis.length > 100) {
+                confettis.splice(0, confettis.length - 100);
+            }
+        });
+    </script>
+</body>
+</html>
